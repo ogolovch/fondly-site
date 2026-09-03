@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Fondly — Support</title>
+<style>
+  :root{--ink:#2B2433;--soft:#6c6377;--rose:#F1577E;--amber:#F6A93B;--paper:#F6F1FA;--card:#fff;--line:#ECE6F2}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,system-ui,'Segoe UI',Roboto,sans-serif;color:var(--ink);line-height:1.6;
+    background:radial-gradient(900px 500px at 15% -5%,#FBE6EC,transparent 55%),radial-gradient(800px 600px at 100% 0,#EAE3FB,transparent 50%),var(--paper);
+    min-height:100vh;padding:48px 20px}
+  .wrap{max-width:680px;margin:0 auto}
+  .logo{display:flex;align-items:center;gap:12px;margin-bottom:8px}
+  .mark{width:44px;height:44px;border-radius:13px;background:linear-gradient(135deg,var(--rose),var(--amber));display:flex;align-items:center;justify-content:center;font-size:24px;box-shadow:0 8px 20px rgba(241,87,126,.35)}
+  h1{font-size:30px;letter-spacing:-.5px;margin:18px 0 4px}
+  .sub{color:var(--soft);font-size:15px;margin-bottom:26px}
+  .card{background:var(--card);border-radius:20px;padding:10px 28px;box-shadow:0 1px 2px rgba(43,36,51,.04),0 10px 30px rgba(43,36,51,.07)}
+  details{border-bottom:1px solid var(--line);padding:16px 0}details:last-child{border-bottom:none}
+  summary{font-weight:650;font-size:16px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center}
+  summary::after{content:"+";color:var(--rose);font-size:22px;font-weight:400}
+  details[open] summary::after{content:"–"}
+  details p{margin:10px 0 2px;color:var(--soft)}
+  .contact{background:var(--card);border-radius:20px;padding:24px 28px;margin-top:18px;text-align:center;box-shadow:0 1px 2px rgba(43,36,51,.04),0 10px 30px rgba(43,36,51,.07)}
+  .btn{display:inline-block;margin-top:10px;background:linear-gradient(135deg,var(--rose),var(--amber));color:#fff;text-decoration:none;font-weight:700;padding:12px 22px;border-radius:14px;box-shadow:0 8px 20px rgba(241,87,126,.32)}
+  a{color:var(--rose)}
+  footer{color:var(--soft);font-size:13px;text-align:center;margin-top:28px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="logo"><div class="mark">🔥</div><strong style="font-size:20px">Fondly</strong></div>
+  <h1>Support</h1>
+  <div class="sub">Remember the people who matter. Here's a hand if you need one.</div>
+  <div class="card">
+    <details open><summary>Do I have to add a birthday for everyone?</summary>
+      <p>No. A name is all you need. Birthdays are optional — add one only when you have it, and Fondly will count down and remind you. People without a birthday simply live on your People list.</p></details>
+    <details><summary>How do reminders work?</summary>
+      <p>When a person or date has a birthday, Fondly schedules a local notification. In Settings you can choose how far ahead to be reminded (on the day, 1 day, 3 days or a week before) and the time of day.</p></details>
+    <details><summary>What are dependents?</summary>
+      <p>Dependents are the people (or pets) attached to someone — a partner, kids, a dog. Add them once and their birthdays appear on Today on their own.</p></details>
+    <details><summary>What is "keep in touch"?</summary>
+      <p>Set a cadence on a person (monthly to yearly) and Fondly nudges you to reach out if it's been a while. Tap "Reached out" — or call, text or email them from their card — to reset the clock.</p></details>
+    <details><summary>Will my list sync to my other devices?</summary>
+      <p>Turn on iCloud backup in Settings to keep your list across your devices via your own iCloud account. The lightweight backup keeps everything except photos; the optional full iCloud sync includes photos too. You can also export a complete backup file at any time.</p></details>
+    <details><summary>How do I share a person with another Fondly user?</summary>
+      <p>Open them, tap the ••• menu and choose Share this person. Fondly makes a small card file you can send by AirDrop, Messages or Mail — when they tap it, Fondly opens and asks before adding. Settings also has "Send my card" so friends can add you.</p></details>
+    <details><summary>What are birthday cards?</summary>
+      <p>Tap Wish on Today (or Send a note on a person) to pick from three ready-made message styles, or share a beautiful card image — perfect for Messages, Instagram or WhatsApp.</p></details>
+    <details><summary>Does Fondly have dark mode?</summary>
+      <p>Yes — Settings ▸ Appearance offers Auto, Light and Dark. Auto follows your system: warm paper by day, candlelit plum by night. The widget adapts too.</p></details>
+    <details><summary>How do I add the widget?</summary>
+      <p>Long-press your Home Screen or Lock Screen, tap +, search for Fondly, and add the Upcoming widget to see who's next at a glance.</p></details>
+    <details><summary>What does the one-time unlock include?</summary>
+      <p>Fondly is free for up to ten people. A single tip unlocks unlimited people and dependents forever — no subscription. Already paid and switched phones? Tap Restore on the unlock screen.</p></details>
+    <details><summary>Is my data private?</summary>
+      <p>Yes. Everything stays on your device (and your own iCloud if you enable it). Fondly collects nothing, has no ads and no account. See our <a href="privacy.html">Privacy Policy</a>.</p></details>
+  </div>
+  <div class="contact">
+    <strong>Still stuck?</strong>
+    <p style="color:var(--soft);margin:6px 0 0">We usually reply within a day or two.</p>
+    <a class="btn" href="mailto:support@fondly.app">Email support@fondly.app</a>
+  </div>
+  <footer>© 2026 Fondly</footer>
+</div>
+</body>
+</html>
