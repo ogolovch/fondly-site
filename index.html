@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Fondly - Remember People</title>
+<meta name="description" content="Fondly is an iOS app with one job: help you remember people. Names, faces, birthdays, how you met, their kids and pets - searchable by voice, private on your iPhone."/>
+<meta property="og:title" content="Fondly - Remember People"/>
+<meta property="og:description" content="Forgetting people was never a character flaw. It was a tooling problem. Fondly helps you remember what mattered about someone the next time you meet."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://ogolovch.github.io/fondly-site/"/>
+<meta property="og:image" content="https://ogolovch.github.io/fondly-site/images/icon.png"/>
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png"/>
+<link rel="icon" type="image/png" href="images/icon.png"/>
+<meta name="apple-itunes-app" content="app-id=6812508718"/>
+<style>
+  :root{--ink:#2B2433;--soft:#6c6377;--rose:#F1577E;--amber:#F6A93B;--paper:#F6F1FA;--card:#fff;--line:#ECE6F2;--plum:#241D2E}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,system-ui,'Segoe UI',Roboto,sans-serif;color:var(--ink);line-height:1.6;
+    background:radial-gradient(900px 500px at 15% -5%,#FBE6EC,transparent 55%),radial-gradient(800px 600px at 100% 0,#EAE3FB,transparent 50%),var(--paper);
+    min-height:100vh;padding:40px 20px 48px}
+  .wrap{max-width:720px;margin:0 auto}
+  a{color:var(--rose)}
+  .logo{display:flex;align-items:center;gap:12px}
+  .logo img{width:44px;height:44px;border-radius:11px;box-shadow:0 8px 20px rgba(241,87,126,.35)}
+  .nav{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+  .nav a.small{color:var(--soft);text-decoration:none;font-size:14px;margin-left:16px}
+
+  .hero{text-align:center;padding:56px 0 34px}
+  .hero img{width:112px;height:112px;border-radius:26px;box-shadow:0 18px 40px rgba(241,87,126,.35)}
+  .hero h1{font-size:44px;line-height:1.1;letter-spacing:-1px;margin:26px 0 12px}
+  .hero h1 span{background:linear-gradient(135deg,var(--rose),var(--amber));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero p{color:var(--soft);font-size:18px;max-width:520px;margin:0 auto}
+  .btn{display:inline-flex;align-items:center;gap:8px;margin-top:24px;background:linear-gradient(135deg,var(--rose),var(--amber));color:#fff;text-decoration:none;font-weight:700;font-size:17px;padding:14px 26px;border-radius:16px;box-shadow:0 10px 24px rgba(241,87,126,.32)}
+  .btn:hover{filter:brightness(1.05)}
+  .note{display:block;color:var(--soft);font-size:13px;margin-top:10px}
+
+  .shots{display:flex;gap:14px;overflow-x:auto;padding:10px 4px 22px;margin:8px -20px 0;padding-left:20px;padding-right:20px;scroll-snap-type:x mandatory}
+  .shots img{flex:0 0 auto;width:200px;height:auto;border-radius:22px;scroll-snap-align:center;box-shadow:0 12px 30px rgba(43,36,51,.14)}
+  @media (min-width:761px){.shots{justify-content:center;overflow:visible;margin:8px 0 0;padding:10px 0 22px}.shots img{width:calc((100% - 42px)/4)}}
+
+  .card{background:var(--card);border-radius:22px;padding:30px 30px;margin-top:22px;box-shadow:0 1px 2px rgba(43,36,51,.04),0 10px 30px rgba(43,36,51,.07)}
+  h2{font-size:24px;letter-spacing:-.3px;margin-bottom:14px}
+  .story p{margin:0 0 14px;font-size:17px}
+  .story p.pull{font-size:21px;font-weight:700;color:var(--ink);margin:22px 0}
+  .story .by{color:var(--soft);font-size:14px;margin-top:4px}
+
+  .features{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .features li{background:var(--paper);border-radius:16px;padding:16px 16px 14px}
+  .features b{display:block;font-size:16px;margin-bottom:2px}
+  .features span{color:var(--soft);font-size:14.5px}
+  .features .ico{font-size:22px;display:block;margin-bottom:6px}
+
+  .moments{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+  .moments span{background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-weight:600;font-size:15px}
+
+  .dark{background:linear-gradient(160deg,#342A40,var(--plum));color:#fff;text-align:center}
+  .dark p{color:rgba(255,255,255,.75);font-size:17px;max-width:520px;margin:0 auto}
+  .dark h2{color:#fff;font-size:28px}
+  .dark .glow{font-size:44px;display:block;margin-bottom:6px}
+
+  .support{text-align:center}
+  .support p{color:var(--soft);max-width:520px;margin:0 auto 6px}
+  .tips{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-top:16px}
+  .tip{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:700;padding:12px 20px;border-radius:14px;border:1.5px solid var(--line);color:var(--ink);background:#fff}
+  .tip:hover{border-color:var(--rose)}
+  .tip.coffee{background:#FFDD00;border-color:#FFDD00;color:#2B2433}
+
+  footer{color:var(--soft);font-size:13px;text-align:center;margin-top:30px}
+  footer a{color:var(--soft);margin:0 8px}
+
+  @media (max-width:560px){
+    .hero h1{font-size:34px}
+    .features{grid-template-columns:1fr}
+    .card{padding:24px 20px}
+    .shots img{width:170px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="nav">
+    <div class="logo"><img src="images/icon.png" alt=""/><strong style="font-size:20px">Fondly</strong></div>
+    <div><a class="small" href="support.html">Support</a><a class="small" href="privacy.html">Privacy</a></div>
+  </div>
+
+  <section class="hero">
+    <img src="images/icon.png" alt="Fondly app icon"/>
+    <h1>Remember people,<br/><span>on your terms.</span></h1>
+    <p>Not just their names - who they are. Fondly is an iOS app with one job: help you remember people.</p>
+    <a class="btn" href="https://apps.apple.com/app/id6812508718">Download on the App Store</a>
+    <span class="note">For iPhone. No account, no ads, nothing collected.</span>
+  </section>
+
+  <div class="shots" aria-label="Fondly screenshots">
+    <img src="images/people.jpg" alt="People list with tags and search" loading="lazy"/>
+    <img src="images/person.jpg" alt="A person's card with photo, birthday, notes and connections" loading="lazy"/>
+    <img src="images/today.jpg" alt="Today screen celebrating a birthday" loading="lazy"/>
+    <img src="images/widget.jpg" alt="Fondly widget on the Home Screen" loading="lazy"/>
+  </div>
+
+  <section class="card story">
+    <h2>Why I built Fondly</h2>
+    <p>For years, I wanted a tool that helped me remember people - not just their names, but who they are.</p>
+    <p>Every person you meet gives you something worth remembering: their name, their kids' names, their interests, the thing they're excited about, the story they told you.</p>
+    <p>And within a few weeks, most of it is gone.</p>
+    <p>I recently moved. New street. New neighbours up, down and across the road. My kids' new classmates and their parents. More than a dozen introductions - and nowhere sensible to put any of it.</p>
+    <p>That's when I realised something most apps miss:</p>
+    <p class="pull">The people we most want to remember are often the people we wouldn't normally connect with online.</p>
+    <p>A neighbour doesn't need to be a LinkedIn connection. A colleague's kids aren't getting a friend request. Sometimes you simply want to remember their name - and find them later by the hobby they mentioned, the conversation you had, or the dog they were walking when you met.</p>
+    <p>I tried Notes, OneNote, spreadsheets and a few other ways of keeping track of people. They're built for tasks that happen to mention people.</p>
+    <p class="pull">Not for people.</p>
+    <p>So I built Fondly. I built it because I wanted this tool myself, and I hope it earns a permanent spot on your phone, too.</p>
+    <p class="by">- Oleksiy Golovchenko, maker of Fondly</p>
+  </section>
+
+  <section class="card">
+    <h2>What Fondly remembers for you</h2>
+    <ul class="features">
+      <li><span class="ico">🪪</span><b>Names, faces and how you met</b><span>Plus birthdays, whenever you have them.</span></li>
+      <li><span class="ico">👨‍👩‍👧</span><b>The people around them</b><span>Partners, kids and pets, with their own birthdays.</span></li>
+      <li><span class="ico">🔎</span><b>Search the way you remember</b><span>By hobby, interest or the conversation itself.</span></li>
+      <li><span class="ico">🎙️</span><b>Capture it by voice</b><span>Dictate memories while they're fresh, then search them by voice too.</span></li>
+      <li><span class="ico">💬</span><b>A quiet nudge</b><span>When it's been too long since you connected.</span></li>
+      <li><span class="ico">🔒</span><b>Your data stays yours</b><span>No collection, no ad targeting, nothing sold. It lives on your iPhone.</span></li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>Made for every new beginning</h2>
+    <div class="moments">
+      <span>New job</span><span>New neighbourhood</span><span>New book club</span><span>Conference this week</span><span>School gates</span>
+    </div>
+    <p style="margin-top:16px;font-size:17px">LinkedIn helps you make the connection. <b>Fondly helps you remember what mattered about that person the next time you meet.</b></p>
+  </section>
+
+  <section class="card dark">
+    <span class="glow">🕯️</span>
+    <h2>Forgetting people was never a character flaw.</h2>
+    <p>It was a tooling problem. Be the person who remembers.</p>
+    <a class="btn" href="https://apps.apple.com/app/id6812508718">Get Fondly for iPhone</a>
+  </section>
+
+  <section class="card support">
+    <h2>Support an indie maker</h2>
+    <p>Fondly is built by one person, with no investors and no ads. If it has helped you remember someone who matters, you can buy me a coffee.</p>
+    <div class="tips">
+      <a class="tip coffee" href="https://buymeacoffee.com/realoleksiy" target="_blank" rel="noopener noreferrer">☕ Buy me a coffee</a>
+      <a class="tip" href="https://nowpayments.io/donation/realoleksiy" target="_blank" rel="noopener noreferrer">₿ Donate with crypto</a>
+    </div>
+    <p style="font-size:13px;margin-top:14px">Crypto donations are handled by NOWPayments. Tips are entirely optional and unlock nothing in the app.</p>
+  </section>
+
+  <footer>
+    <div><a href="support.html">Support</a>·<a href="privacy.html">Privacy Policy</a>·<a href="mailto:fondly-support@polaredgedc.com">Contact</a></div>
+    <div style="margin-top:8px">© 2026 Fondly. Apple, the Apple logo and iPhone are trademarks of Apple Inc.</div>
+  </footer>
+</div>
+</body>
+</html>
